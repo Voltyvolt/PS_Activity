@@ -1,0 +1,644 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8A1EDA7D-3AF1-4DFC-B83C-9157AB3A43AD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PS_Activity</RootNamespace>
+    <AssemblyName>PS_Activity</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <UpgradeBackupLocation />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v17.1.Core, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v17.1.Core, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v17.1.Core, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v17.1.Core, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v17.1.Core, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v17.1.Core, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Resources.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v17.1.Core, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v17.1.Web, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\MySql dll 8.0.17.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.SQLite, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.113.1\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.113.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.113.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="DevExpress.Web.Bootstrap.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\BouncyCastle.Crypto.dll" />
+    <Content Include="bin\DevExpress.Charts.v17.1.Core.dll" />
+    <Content Include="bin\DevExpress.CodeParser.v17.1.dll" />
+    <Content Include="bin\DevExpress.Data.v17.1.dll" />
+    <Content Include="bin\DevExpress.Data.v17.1.xml" />
+    <Content Include="bin\DevExpress.DataAccess.v17.1.dll" />
+    <Content Include="bin\DevExpress.DataAccess.v17.1.xml" />
+    <Content Include="bin\DevExpress.Office.v17.1.Core.dll" />
+    <Content Include="bin\DevExpress.Office.v17.1.Core.xml" />
+    <Content Include="bin\DevExpress.Pdf.v17.1.Core.dll" />
+    <Content Include="bin\DevExpress.Pdf.v17.1.Core.xml" />
+    <Content Include="bin\DevExpress.PivotGrid.v17.1.Core.dll" />
+    <Content Include="bin\DevExpress.PivotGrid.v17.1.Core.xml" />
+    <Content Include="bin\DevExpress.Printing.v17.1.Core.dll" />
+    <Content Include="bin\DevExpress.Printing.v17.1.Core.xml" />
+    <Content Include="bin\DevExpress.RichEdit.v17.1.Core.dll" />
+    <Content Include="bin\DevExpress.RichEdit.v17.1.Core.xml" />
+    <Content Include="bin\DevExpress.Sparkline.v17.1.Core.dll" />
+    <Content Include="bin\DevExpress.Sparkline.v17.1.Core.xml" />
+    <Content Include="bin\DevExpress.Web.ASPxThemes.v17.1.dll" />
+    <Content Include="bin\DevExpress.Web.Bootstrap.v17.1.dll" />
+    <Content Include="bin\DevExpress.Web.Resources.v17.1.dll" />
+    <Content Include="bin\DevExpress.Web.v17.1.dll" />
+    <Content Include="bin\DevExpress.Web.v17.1.xml" />
+    <Content Include="bin\DevExpress.Xpo.v17.1.dll" />
+    <Content Include="bin\DevExpress.Xpo.v17.1.xml" />
+    <Content Include="bin\DevExpress.XtraCharts.v17.1.dll" />
+    <Content Include="bin\DevExpress.XtraCharts.v17.1.xml" />
+    <Content Include="bin\DevExpress.XtraGauges.v17.1.Core.dll" />
+    <Content Include="bin\DevExpress.XtraGauges.v17.1.Core.xml" />
+    <Content Include="bin\DevExpress.XtraReports.v17.1.dll" />
+    <Content Include="bin\DevExpress.XtraReports.v17.1.Web.dll" />
+    <Content Include="bin\DevExpress.XtraReports.v17.1.Web.xml" />
+    <Content Include="bin\DevExpress.XtraReports.v17.1.xml" />
+    <Content Include="bin\de\DevExpress.Data.v17.1.resources.dll" />
+    <Content Include="bin\de\DevExpress.DataAccess.v17.1.resources.dll" />
+    <Content Include="bin\de\DevExpress.Office.v17.1.Core.resources.dll" />
+    <Content Include="bin\de\DevExpress.Pdf.v17.1.Core.resources.dll" />
+    <Content Include="bin\de\DevExpress.PivotGrid.v17.1.Core.resources.dll" />
+    <Content Include="bin\de\DevExpress.Printing.v17.1.Core.resources.dll" />
+    <Content Include="bin\de\DevExpress.RichEdit.v17.1.Core.resources.dll" />
+    <Content Include="bin\de\DevExpress.Sparkline.v17.1.Core.resources.dll" />
+    <Content Include="bin\de\DevExpress.Web.Resources.v17.1.resources.dll" />
+    <Content Include="bin\de\DevExpress.Web.v17.1.resources.dll" />
+    <Content Include="bin\de\DevExpress.Xpo.v17.1.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraCharts.v17.1.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraGauges.v17.1.Core.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraReports.v17.1.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraReports.v17.1.Web.resources.dll" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\EntityFramework.xml" />
+    <Content Include="bin\es\DevExpress.Data.v17.1.resources.dll" />
+    <Content Include="bin\es\DevExpress.DataAccess.v17.1.resources.dll" />
+    <Content Include="bin\es\DevExpress.Office.v17.1.Core.resources.dll" />
+    <Content Include="bin\es\DevExpress.Pdf.v17.1.Core.resources.dll" />
+    <Content Include="bin\es\DevExpress.PivotGrid.v17.1.Core.resources.dll" />
+    <Content Include="bin\es\DevExpress.Printing.v17.1.Core.resources.dll" />
+    <Content Include="bin\es\DevExpress.RichEdit.v17.1.Core.resources.dll" />
+    <Content Include="bin\es\DevExpress.Sparkline.v17.1.Core.resources.dll" />
+    <Content Include="bin\es\DevExpress.Web.Resources.v17.1.resources.dll" />
+    <Content Include="bin\es\DevExpress.Web.v17.1.resources.dll" />
+    <Content Include="bin\es\DevExpress.Xpo.v17.1.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraCharts.v17.1.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraGauges.v17.1.Core.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraReports.v17.1.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraReports.v17.1.Web.resources.dll" />
+    <Content Include="bin\GMap.NET.Core.dll" />
+    <Content Include="bin\Google.Protobuf.dll" />
+    <Content Include="bin\ja\DevExpress.Data.v17.1.resources.dll" />
+    <Content Include="bin\ja\DevExpress.DataAccess.v17.1.resources.dll" />
+    <Content Include="bin\ja\DevExpress.Office.v17.1.Core.resources.dll" />
+    <Content Include="bin\ja\DevExpress.Pdf.v17.1.Core.resources.dll" />
+    <Content Include="bin\ja\DevExpress.PivotGrid.v17.1.Core.resources.dll" />
+    <Content Include="bin\ja\DevExpress.Printing.v17.1.Core.resources.dll" />
+    <Content Include="bin\ja\DevExpress.RichEdit.v17.1.Core.resources.dll" />
+    <Content Include="bin\ja\DevExpress.Sparkline.v17.1.Core.resources.dll" />
+    <Content Include="bin\ja\DevExpress.Web.Resources.v17.1.resources.dll" />
+    <Content Include="bin\ja\DevExpress.Web.v17.1.resources.dll" />
+    <Content Include="bin\ja\DevExpress.Xpo.v17.1.resources.dll" />
+    <Content Include="bin\ja\DevExpress.XtraCharts.v17.1.resources.dll" />
+    <Content Include="bin\ja\DevExpress.XtraGauges.v17.1.Core.resources.dll" />
+    <Content Include="bin\ja\DevExpress.XtraReports.v17.1.resources.dll" />
+    <Content Include="bin\ja\DevExpress.XtraReports.v17.1.Web.resources.dll" />
+    <Content Include="bin\MySql.Data.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\PS_Activity.dll" />
+    <Content Include="bin\PS_Activity.pdb" />
+    <Content Include="bin\Renci.SshNet.dll" />
+    <Content Include="bin\ru\DevExpress.Data.v17.1.resources.dll" />
+    <Content Include="bin\ru\DevExpress.DataAccess.v17.1.resources.dll" />
+    <Content Include="bin\ru\DevExpress.Office.v17.1.Core.resources.dll" />
+    <Content Include="bin\ru\DevExpress.Pdf.v17.1.Core.resources.dll" />
+    <Content Include="bin\ru\DevExpress.PivotGrid.v17.1.Core.resources.dll" />
+    <Content Include="bin\ru\DevExpress.Printing.v17.1.Core.resources.dll" />
+    <Content Include="bin\ru\DevExpress.RichEdit.v17.1.Core.resources.dll" />
+    <Content Include="bin\ru\DevExpress.Sparkline.v17.1.Core.resources.dll" />
+    <Content Include="bin\ru\DevExpress.Web.Resources.v17.1.resources.dll" />
+    <Content Include="bin\ru\DevExpress.Web.v17.1.resources.dll" />
+    <Content Include="bin\ru\DevExpress.Xpo.v17.1.resources.dll" />
+    <Content Include="bin\ru\DevExpress.XtraCharts.v17.1.resources.dll" />
+    <Content Include="bin\ru\DevExpress.XtraGauges.v17.1.Core.resources.dll" />
+    <Content Include="bin\ru\DevExpress.XtraReports.v17.1.resources.dll" />
+    <Content Include="bin\ru\DevExpress.XtraReports.v17.1.Web.resources.dll" />
+    <Content Include="bin\System.Data.SQLite.dll" />
+    <Content Include="bin\System.Data.SQLite.EF6.dll" />
+    <Content Include="bin\System.Data.SQLite.Linq.dll" />
+    <Content Include="bin\System.Data.SQLite.xml" />
+    <Content Include="bin\x64\SQLite.Interop.dll" />
+    <Content Include="bin\x86\SQLite.Interop.dll" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Fonts\fontawesome-webfont.svg" />
+    <Content Include="Fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="frmEdit.aspx" />
+    <Content Include="frmIndex.aspx" />
+    <Content Include="frmReport.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\PS_Activity.csproj.CopyComplete" />
+    <Content Include="obj\Debug\PS_Activity.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\PS_Activity.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\PS_Activity.csproj.GenerateResource.cache" />
+    <Content Include="obj\Debug\PS_Activity.csprojAssemblyReference.cache" />
+    <Content Include="obj\Debug\PS_Activity.dll" />
+    <Content Include="obj\Debug\ps_activity.dll.licenses" />
+    <Content Include="obj\Debug\PS_Activity.pdb" />
+    <Content Include="obj\Release\DesignTimeResolveAssemblyReferences.cache" />
+    <Content Include="obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\BouncyCastle.Crypto.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\DevExpress.Charts.v17.1.Core.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\DevExpress.CodeParser.v17.1.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\DevExpress.Data.v17.1.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\DevExpress.DataAccess.v17.1.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\DevExpress.Office.v17.1.Core.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\DevExpress.Pdf.v17.1.Core.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\DevExpress.PivotGrid.v17.1.Core.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\DevExpress.Printing.v17.1.Core.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\DevExpress.RichEdit.v17.1.Core.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\DevExpress.Sparkline.v17.1.Core.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\DevExpress.Web.ASPxThemes.v17.1.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\DevExpress.Web.Bootstrap.v17.1.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\DevExpress.Web.Resources.v17.1.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\DevExpress.Web.v17.1.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\DevExpress.Xpo.v17.1.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\DevExpress.XtraCharts.v17.1.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\DevExpress.XtraGauges.v17.1.Core.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\DevExpress.XtraReports.v17.1.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\DevExpress.XtraReports.v17.1.Web.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\de\DevExpress.Data.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\de\DevExpress.DataAccess.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\de\DevExpress.Office.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\de\DevExpress.Pdf.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\de\DevExpress.PivotGrid.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\de\DevExpress.Printing.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\de\DevExpress.RichEdit.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\de\DevExpress.Sparkline.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\de\DevExpress.Web.Resources.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\de\DevExpress.Web.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\de\DevExpress.Xpo.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\de\DevExpress.XtraCharts.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\de\DevExpress.XtraGauges.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\de\DevExpress.XtraReports.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\de\DevExpress.XtraReports.v17.1.Web.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\EntityFramework.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\EntityFramework.SqlServer.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\es\DevExpress.Data.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\es\DevExpress.DataAccess.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\es\DevExpress.Office.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\es\DevExpress.Pdf.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\es\DevExpress.PivotGrid.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\es\DevExpress.Printing.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\es\DevExpress.RichEdit.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\es\DevExpress.Sparkline.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\es\DevExpress.Web.Resources.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\es\DevExpress.Web.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\es\DevExpress.Xpo.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\es\DevExpress.XtraCharts.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\es\DevExpress.XtraGauges.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\es\DevExpress.XtraReports.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\es\DevExpress.XtraReports.v17.1.Web.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\GMap.NET.Core.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\Google.Protobuf.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\ja\DevExpress.Data.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\ja\DevExpress.DataAccess.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\ja\DevExpress.Office.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\ja\DevExpress.Pdf.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\ja\DevExpress.PivotGrid.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\ja\DevExpress.Printing.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\ja\DevExpress.RichEdit.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\ja\DevExpress.Sparkline.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\ja\DevExpress.Web.Resources.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\ja\DevExpress.Web.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\ja\DevExpress.Xpo.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\ja\DevExpress.XtraCharts.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\ja\DevExpress.XtraGauges.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\ja\DevExpress.XtraReports.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\ja\DevExpress.XtraReports.v17.1.Web.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\MySql.Data.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\Newtonsoft.Json.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\PS_Activity.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\PS_Activity.pdb" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\Renci.SshNet.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\ru\DevExpress.Data.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\ru\DevExpress.DataAccess.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\ru\DevExpress.Office.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\ru\DevExpress.Pdf.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\ru\DevExpress.PivotGrid.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\ru\DevExpress.Printing.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\ru\DevExpress.RichEdit.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\ru\DevExpress.Sparkline.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\ru\DevExpress.Web.Resources.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\ru\DevExpress.Web.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\ru\DevExpress.Xpo.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\ru\DevExpress.XtraCharts.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\ru\DevExpress.XtraGauges.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\ru\DevExpress.XtraReports.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\ru\DevExpress.XtraReports.v17.1.Web.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\System.Data.SQLite.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\System.Data.SQLite.dll.config" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\System.Data.SQLite.EF6.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\System.Data.SQLite.Linq.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\x64\SQLite.Interop.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\x86\SQLite.Interop.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\bootstrap.min.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\font-awesome.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\font-awesome.min.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\Site.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Default.aspx" />
+    <Content Include="obj\Release\Package\PackageTmp\Fonts\fontawesome-webfont.eot" />
+    <Content Include="obj\Release\Package\PackageTmp\Fonts\fontawesome-webfont.svg" />
+    <Content Include="obj\Release\Package\PackageTmp\Fonts\fontawesome-webfont.ttf" />
+    <Content Include="obj\Release\Package\PackageTmp\Fonts\fontawesome-webfont.woff" />
+    <Content Include="obj\Release\Package\PackageTmp\Fonts\fontawesome-webfont.woff2" />
+    <Content Include="obj\Release\Package\PackageTmp\Fonts\FontAwesome.otf" />
+    <Content Include="obj\Release\Package\PackageTmp\Fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="obj\Release\Package\PackageTmp\Fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="obj\Release\Package\PackageTmp\Fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="obj\Release\Package\PackageTmp\Fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="obj\Release\Package\PackageTmp\Fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="obj\Release\Package\PackageTmp\frmEdit.aspx" />
+    <Content Include="obj\Release\Package\PackageTmp\frmIndex.aspx" />
+    <Content Include="obj\Release\Package\PackageTmp\frmReport.aspx" />
+    <Content Include="obj\Release\Package\PackageTmp\Global.asax" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Debug\PS_Activity.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Debug\PS_Activity.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Debug\ps_activity.dll.licenses" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Debug\PS_Activity.pdb" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\BouncyCastle.Crypto.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\DevExpress.Charts.v17.1.Core.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\DevExpress.CodeParser.v17.1.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\DevExpress.Data.v17.1.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\DevExpress.DataAccess.v17.1.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\DevExpress.Office.v17.1.Core.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\DevExpress.Pdf.v17.1.Core.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\DevExpress.PivotGrid.v17.1.Core.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\DevExpress.Printing.v17.1.Core.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\DevExpress.RichEdit.v17.1.Core.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\DevExpress.Sparkline.v17.1.Core.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\DevExpress.Web.ASPxThemes.v17.1.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\DevExpress.Web.Bootstrap.v17.1.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\DevExpress.Web.Resources.v17.1.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\DevExpress.Web.v17.1.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\DevExpress.Xpo.v17.1.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\DevExpress.XtraCharts.v17.1.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\DevExpress.XtraGauges.v17.1.Core.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\DevExpress.XtraReports.v17.1.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\DevExpress.XtraReports.v17.1.Web.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\de\DevExpress.Data.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\de\DevExpress.DataAccess.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\de\DevExpress.Office.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\de\DevExpress.Pdf.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\de\DevExpress.PivotGrid.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\de\DevExpress.Printing.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\de\DevExpress.RichEdit.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\de\DevExpress.Sparkline.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\de\DevExpress.Web.Resources.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\de\DevExpress.Web.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\de\DevExpress.Xpo.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\de\DevExpress.XtraCharts.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\de\DevExpress.XtraGauges.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\de\DevExpress.XtraReports.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\de\DevExpress.XtraReports.v17.1.Web.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\EntityFramework.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\EntityFramework.SqlServer.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\es\DevExpress.Data.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\es\DevExpress.DataAccess.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\es\DevExpress.Office.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\es\DevExpress.Pdf.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\es\DevExpress.PivotGrid.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\es\DevExpress.Printing.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\es\DevExpress.RichEdit.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\es\DevExpress.Sparkline.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\es\DevExpress.Web.Resources.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\es\DevExpress.Web.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\es\DevExpress.Xpo.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\es\DevExpress.XtraCharts.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\es\DevExpress.XtraGauges.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\es\DevExpress.XtraReports.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\es\DevExpress.XtraReports.v17.1.Web.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\Google.Protobuf.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\ja\DevExpress.Data.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\ja\DevExpress.DataAccess.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\ja\DevExpress.Office.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\ja\DevExpress.Pdf.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\ja\DevExpress.PivotGrid.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\ja\DevExpress.Printing.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\ja\DevExpress.RichEdit.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\ja\DevExpress.Sparkline.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\ja\DevExpress.Web.Resources.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\ja\DevExpress.Web.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\ja\DevExpress.Xpo.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\ja\DevExpress.XtraCharts.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\ja\DevExpress.XtraGauges.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\ja\DevExpress.XtraReports.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\ja\DevExpress.XtraReports.v17.1.Web.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\MySql.Data.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\Newtonsoft.Json.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\PS_Activity.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\PS_Activity.pdb" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\Renci.SshNet.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\ru\DevExpress.Data.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\ru\DevExpress.DataAccess.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\ru\DevExpress.Office.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\ru\DevExpress.Pdf.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\ru\DevExpress.PivotGrid.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\ru\DevExpress.Printing.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\ru\DevExpress.RichEdit.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\ru\DevExpress.Sparkline.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\ru\DevExpress.Web.Resources.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\ru\DevExpress.Web.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\ru\DevExpress.Xpo.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\ru\DevExpress.XtraCharts.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\ru\DevExpress.XtraGauges.v17.1.Core.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\ru\DevExpress.XtraReports.v17.1.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\ru\DevExpress.XtraReports.v17.1.Web.resources.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\System.Data.SQLite.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\System.Data.SQLite.EF6.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\System.Data.SQLite.Linq.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\x64\SQLite.Interop.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\bin\x86\SQLite.Interop.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\Content\bootstrap.min.css" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\Content\font-awesome.css" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\Content\font-awesome.min.css" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\Content\Site.css" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\Default.aspx" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\Fonts\fontawesome-webfont.svg" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\Fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\frmEdit.aspx" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\frmIndex.aspx" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\frmReport.aspx" />
+    <Content Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\Global.asax" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\bootstrap.min.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\jquery-1.12.2.min.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Site.master" />
+    <Content Include="obj\Release\Package\PackageTmp\Uploads\631304_20200901_1.jpg" />
+    <Content Include="obj\Release\Package\PackageTmp\Uploads\Test1.jpg" />
+    <Content Include="obj\Release\Package\PackageTmp\Web.config" />
+    <Content Include="obj\Release\PS_Activity.csproj.CopyComplete" />
+    <Content Include="obj\Release\PS_Activity.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Release\PS_Activity.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Release\PS_Activity.csproj.GenerateResource.cache" />
+    <Content Include="obj\Release\PS_Activity.csprojAssemblyReference.cache" />
+    <Content Include="obj\Release\PS_Activity.dll" />
+    <Content Include="obj\Release\ps_activity.dll.licenses" />
+    <Content Include="obj\Release\PS_Activity.pdb" />
+    <Content Include="obj\Release\TransformWebConfig\assist\Web.config" />
+    <Content Include="obj\Release\TransformWebConfig\original\Web.config" />
+    <Content Include="obj\Release\TransformWebConfig\transformed\Web.config" />
+    <Content Include="obj\Release\_WPPLastBuildInfo.txt" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.12.2.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Uploads\631304_20200901_1.jpg" />
+    <Content Include="Uploads\Test1.jpg" />
+    <Content Include="Web.config" />
+    <Content Include="Fonts\FontAwesome.otf" />
+    <Content Include="Fonts\fontawesome-webfont.woff2" />
+    <Content Include="Fonts\fontawesome-webfont.woff" />
+    <Content Include="Fonts\fontawesome-webfont.ttf" />
+    <Content Include="Fonts\fontawesome-webfont.eot" />
+    <Content Include="bin\PS_Activity.dll.config" />
+    <Content Include="bin\System.Data.SQLite.dll.config" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmEdit.aspx.cs">
+      <DependentUpon>frmEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmEdit.aspx.designer.cs">
+      <DependentUpon>frmEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmIndex.aspx.cs">
+      <DependentUpon>frmIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmIndex.aspx.designer.cs">
+      <DependentUpon>frmIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmReport.aspx.cs">
+      <DependentUpon>frmReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmReport.aspx.designer.cs">
+      <DependentUpon>frmReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Gstr.cs" />
+    <Compile Include="GsysFunc.cs" />
+    <Compile Include="GsysSQL.cs" />
+    <Compile Include="GVar.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.6.1.AssemblyAttributes.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="obj\Release\.NETFramework,Version=v4.6.1.AssemblyAttributes.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportActivity.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Site.master.cs">
+      <DependentUpon>Site.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.master.designer.cs">
+      <DependentUpon>Site.master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="obj\Release\Package\PackageTmp\obj\Release\Package\PackageTmp\Scripts\" />
+    <Folder Include="obj\Release\ProfileTransformWebConfig\transformed\obj\Release\Package\PackageTmp\" />
+    <Folder Include="obj\Release\ProfileTransformWebConfig\transformed\obj\Release\TransformWebConfig\assist\" />
+    <Folder Include="obj\Release\ProfileTransformWebConfig\transformed\obj\Release\TransformWebConfig\original\" />
+    <Folder Include="obj\Release\ProfileTransformWebConfig\transformed\obj\Release\TransformWebConfig\transformed\" />
+    <Folder Include="obj\Release\TempPE\" />
+    <Folder Include="obj\Release\TransformWebConfig\transformed\obj\Release\Package\PackageTmp\" />
+    <Folder Include="obj\Release\TransformWebConfig\transformed\obj\Release\TransformWebConfig\assist\" />
+    <Folder Include="obj\Release\TransformWebConfig\transformed\obj\Release\TransformWebConfig\original\" />
+    <Folder Include="obj\Release\TransformWebConfig\transformed\obj\Release\TransformWebConfig\transformed\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="obj\Debug\ReportActivity.resources" />
+    <EmbeddedResource Include="obj\Release\ReportActivity.resources" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="ReportActivity.resx">
+      <DependentUpon>ReportActivity.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3197</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:3197/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.113.1\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.113.1\build\net46\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.113.1\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.113.1\build\net46\System.Data.SQLite.Core.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
